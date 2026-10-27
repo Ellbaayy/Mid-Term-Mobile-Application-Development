@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Student Data</string>
+
+    <!-- Screen title and summary -->
+    <string name="screen_title">Student Data</string>
+    <string name="screen_subtitle">Student enrollment records backed by SQLite</string>
+    <string name="summary_empty">Total: 0</string>
+
+    <!-- Form -->
+    <string name="label_student_name">Student Name</string>
+    <string name="hint_student_name">Enter student name</string>
+    <string name="label_student_id">Student ID</string>
+    <string name="hint_student_id">Enter student ID</string>
+    <string name="label_enrolled">Has Enrolled</string>
+    <string name="label_form_mode_new">Mode: new record</string>
+    <string name="label_form_mode_edit">Mode: editing selected record</string>
+
+    <!-- Buttons -->
+    <string name="action_add">Add</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_view">View</string>
+
+    <!-- Validation messages -->
+    <string name="error_name_required">Student name is required</string>
+    <string name="error_id_required">Student ID is required</string>
+    <string name="error_id_duplicate">Student ID is already in use</string>
+    <string name="error_no_selection">Select a student from the list first</string>
+
+    <!-- Result messages -->
+    <string name="msg_added">Student record added</string>
+    <string name="msg_add_failed">Failed to add the student record</string>
+    <string name="msg_updated">Student record updated</string>
+    <string name="msg_update_failed">Failed to update the student record</string>
+    <string name="msg_deleted">Student record deleted</string>
+    <string name="msg_delete_confirmation">Delete this student record? This action cannot be undone.</string>
+    <string name="dialog_delete_title">Confirm delete</string>
+    <string name="dialog_yes">Delete</string>
+    <string name="dialog_no">Cancel</string>
+    <string name="msg_view_empty">There are no student records in the database</string>
+
+    <!-- List -->
+    <string name="list_empty">No records yet. Add a student using the form above.</string>
+    <string name="list_header">Student list</string>
+    <string name="status_enrolled">Enrolled</string>
+    <string name="status_not_enrolled">Not enrolled</string>
+
+    <!-- Formats -->
+    <string name="format_summary">Total: %1$d · Enrolled: %2$d · Not enrolled: %3$d</string>
+    <string name="format_view_result">Showing %1$d record(s)</string>
+    <string name="format_student_id">ID: %1$s</string>
+</resources>

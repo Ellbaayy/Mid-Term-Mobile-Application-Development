@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_primary">#5A4BB0</color>
+    <color name="purple_primary_dark">#3F3486</color>
+    <color name="purple_container">#E6E0FF</color>
+    <color name="surface">#FFFBFE</color>
+    <color name="surface_variant">#EFEAF4</color>
+    <color name="on_surface">#1C1B1F</color>
+    <color name="on_surface_variant">#49454F</color>
+    <color name="outline">#CAC4D0</color>
+    <color name="delete_text">#B3261E</color>
+    <color name="status_enrolled_bg">#D7F3DE</color>
+    <color name="status_enrolled_text">#1B5E32</color>
+    <color name="status_not_enrolled_bg">#FCE3D6</color>
+    <color name="status_not_enrolled_text">#8A3A12</color>
+</resources>
