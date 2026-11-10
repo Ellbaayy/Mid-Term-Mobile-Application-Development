@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
+    // The Google Services plugin stays disabled until google-services.json is placed
+    // in the app/ directory. Uncomment the line below after adding that file.
+    // alias(libs.plugins.google.services)
 }
 
 android {
@@ -38,6 +41,11 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.material)
     implementation(libs.recyclerview)
+
+    // Cloud Firestore: the student records live in the "Students" collection.
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.ext.junit)

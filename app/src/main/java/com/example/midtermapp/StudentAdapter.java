@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * RecyclerView adapter that renders the student list.
@@ -26,7 +28,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     private final List<Student> students = new ArrayList<>();
     private final OnStudentClickListener listener;
-    private long selectedId = -1L;
+
+    @Nullable
+    private String selectedDocumentId;
 
     public StudentAdapter(@NonNull OnStudentClickListener listener) {
         this.listener = listener;
@@ -38,8 +42,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         notifyDataSetChanged();
     }
 
-    public void setSelectedId(long id) {
-        selectedId = id;
+    public void setSelectedDocumentId(@Nullable String documentId) {
+        selectedDocumentId = documentId;
         notifyDataSetChanged();
     }
 
@@ -93,12 +97,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
             }
             statusText.setTextColor(ContextCompat.getColor(itemView.getContext(), textColorRes));
 
+            boolean selected = Objects.equals(student.getDocumentId(), selectedDocumentId);
             Resources resources = itemView.getResources();
             int strokeWidth = Math.round(resources.getDisplayMetrics().density
-                    * (student.getId() == selectedId ? 2f : 1f));
+                    * (selected ? 2f : 1f));
             card.setStrokeWidth(strokeWidth);
             card.setStrokeColor(ContextCompat.getColor(itemView.getContext(),
-                    student.getId() == selectedId ? R.color.purple_primary : R.color.outline));
+                    selected ? R.color.purple_primary : R.color.outline));
 
             card.setOnClickListener(v -> listener.onStudentClick(student));
         }

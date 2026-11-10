@@ -1,0 +1,14 @@
+rules_version = '2';
+
+// Firestore security rules for the student data application.
+// Paste this into Firebase Console > Firestore Database > Rules, then Publish.
+//
+// The app has no sign-in screen, so the rules stay open for the "Students"
+// collection only. Use this for coursework, never for production data.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /Students/{studentId} {
+      allow read, write: if true;
+    }
+  }
+}

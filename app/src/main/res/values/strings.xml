@@ -3,7 +3,7 @@
 
     <!-- Screen title and summary -->
     <string name="screen_title">Student Data</string>
-    <string name="screen_subtitle">Student enrollment records backed by SQLite</string>
+    <string name="screen_subtitle">Student enrollment records stored in Firebase Firestore</string>
     <string name="summary_empty">Total: 0</string>
 
     <!-- Form -->
@@ -33,11 +33,14 @@
     <string name="msg_updated">Student record updated</string>
     <string name="msg_update_failed">Failed to update the student record</string>
     <string name="msg_deleted">Student record deleted</string>
+    <string name="msg_delete_failed">Failed to delete the student record</string>
+    <string name="msg_load_failed">Failed to read the student records from Firestore</string>
+    <string name="msg_firestore_failed">Firestore request failed. Check the internet connection.</string>
     <string name="msg_delete_confirmation">Delete this student record? This action cannot be undone.</string>
     <string name="dialog_delete_title">Confirm delete</string>
     <string name="dialog_yes">Delete</string>
     <string name="dialog_no">Cancel</string>
-    <string name="msg_view_empty">There are no student records in the database</string>
+    <string name="msg_view_empty">There are no student records in Firestore</string>
 
     <!-- List -->
     <string name="list_empty">No records yet. Add a student using the form above.</string>
