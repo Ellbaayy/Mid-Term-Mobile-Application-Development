@@ -71,15 +71,20 @@ when `google-services.json` is missing.
 
 ## Verification
 
-Checked on an Android 16 (API 36) emulator:
+- `./gradlew assembleDebug` and `./gradlew testDebugUnitTest` both pass after the
+  migration to Firestore.
+- Runtime checking on an emulator needs `google-services.json` first: without that file
+  the app cannot open a Firestore connection.
+
+Checked on an Android 16 (API 36) emulator with the Firebase project attached:
 
 - Adding a record writes a document to the `Students` collection, then refreshes the list
   and the summary counters.
 - A duplicate student ID is rejected with the inline error "Student ID is already in use".
 - Selecting a record fills the form; **Edit** updates the selected document.
 - **Delete** shows a confirmation dialog and removes the document.
-- Stored documents were read back from the `Students` collection in the Firebase Console.
-- `./gradlew assembleDebug` and `./gradlew testDebugUnitTest` both pass.
+- Stored documents are read back from the `Students` collection in the Firebase Console.
+
 
 ## How to run
 
