@@ -57,11 +57,11 @@ checked with a query before every add and edit.
 4. **Project settings > Your apps > Android**: register the package name
    `com.example.midtermapp`, then download `google-services.json`.
 5. Put `google-services.json` in the `app/` directory.
-6. Uncomment `alias(libs.plugins.google.services)` in `app/build.gradle.kts`, then sync
-   Gradle.
 
-The Google Services plugin stays disabled in this repository because it fails the build
-when `google-services.json` is missing.
+This repository already contains the file for the `Mid Term MAD` Firebase project, and the
+Google Services plugin is enabled in `app/build.gradle.kts`. To point the app at a
+different Firebase project, replace `app/google-services.json` with the file from that
+project and sync Gradle.
 
 ## Screenshots
 
@@ -71,19 +71,19 @@ when `google-services.json` is missing.
 
 ## Verification
 
-- `./gradlew assembleDebug` and `./gradlew testDebugUnitTest` both pass after the
-  migration to Firestore.
-- Runtime checking on an emulator needs `google-services.json` first: without that file
-  the app cannot open a Firestore connection.
+- `./gradlew assembleDebug` and `./gradlew testDebugUnitTest` both pass with the Google
+  Services plugin enabled.
 
-Checked on an Android 16 (API 36) emulator with the Firebase project attached:
+Checked on an Android 16 (API 36) emulator against the `Mid Term MAD` Firebase project:
 
 - Adding a record writes a document to the `Students` collection, then refreshes the list
   and the summary counters.
 - A duplicate student ID is rejected with the inline error "Student ID is already in use".
 - Selecting a record fills the form; **Edit** updates the selected document.
 - **Delete** shows a confirmation dialog and removes the document.
-- Stored documents are read back from the `Students` collection in the Firebase Console.
+- Records survive an app restart, so they come from Firestore and not from local memory.
+- Stored documents were read back from the `Students` collection through the Firestore
+  REST API: the field names and values match what the form sent.
 
 
 ## How to run

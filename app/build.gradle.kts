@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    // The Google Services plugin stays disabled until google-services.json is placed
-    // in the app/ directory. Uncomment the line below after adding that file.
-    // alias(libs.plugins.google.services)
+    alias(libs.plugins.google.services)
 }
 
 android {
